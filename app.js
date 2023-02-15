@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 
 // Mounting the routers
 app.use("/api/v1/tours", tourRouter);
-app.use("/api/v1/users", userRouter);
+app.use("/api/v1/users", userRouter); 
 
 // 4) START THE SERVER
 const port = 3000;
