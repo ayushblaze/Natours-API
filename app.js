@@ -13,10 +13,7 @@ if (process.env.NODE_ENV === "development") {
 
 app.use(express.json());
 
-app.use((req, res, next) => {
-  console.log("The middleware says hello 😁");
-  next();
-}); 
+
 
 // app.get('/api/v1/tours', getAllTours);
 // app.post('/api/v1/tours', createTour);
@@ -27,5 +24,11 @@ app.use((req, res, next) => {
 // Mounting the routers
 app.use("/api/v1/tours", tourRouter);
 app.use("/api/v1/users", userRouter); 
+app.all("*", (req, res, next) => {
+  res.status(404).json({
+    status: "fail",
+    message: `Can't find ${req.originalUrl} on the server.`
+  });
+});
 
 module.exports = app;
