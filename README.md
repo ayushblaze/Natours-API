@@ -1,0 +1,2 @@
+- [x] Login Functionality
+- [ ] Protected Routes
