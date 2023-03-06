@@ -18,6 +18,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     minlength: 8,
+    select: false, // makes the password not show up in any output 
   },
   passwordConfirm: {
     type: String,
@@ -27,7 +28,9 @@ const userSchema = new mongoose.Schema({
       validator: function(el) {
         return el === this.password;
       }
-    }
+    },
+    message: "Password don't match",
+    select: false, // makes the password not show up in any output 
   }
 });
 
