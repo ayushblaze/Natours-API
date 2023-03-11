@@ -1,2 +1,3 @@
 - [x] Login Functionality
 - [x] Protected Routes
+- [ ] Updated Password Functionality 
